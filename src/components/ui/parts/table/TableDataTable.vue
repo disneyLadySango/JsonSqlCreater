@@ -53,7 +53,6 @@ export default {
   ],
   methods: {
     handleCopy(index, count) {
-      console.log(this.columns);
       this.$emit('copy', count, this.data[index]);
     },
   },

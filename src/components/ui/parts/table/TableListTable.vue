@@ -30,7 +30,7 @@
         <template slot-scope="scope">
           <el-button
             size="mini"
-            @click="handleEdit(scope.$index, scope)">Edit</el-button
+            @click="handleEdit(scope.$index)">Edit</el-button
           >
           <el-button
             size="mini"
@@ -61,8 +61,7 @@ export default {
     };
   },
   methods: {
-    handleEdit(index, scope) {
-      console.log(scope);
+    handleEdit(index) {
       this.$emit('edit', index);
     },
     handleDelete(index) {

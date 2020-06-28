@@ -34,6 +34,7 @@
 import TableListTable from '@/components/ui/parts/table/TableListTable';
 import TableDialog from '@/components/ui/parts/TableDialog';
 import json from '@/assets/sql/list.json';
+import FileUtils from '@/FileUtils';
 
 export default {
   data() {
@@ -80,11 +81,7 @@ export default {
       this.tableList.splice(index, 1);
     },
     clickSaveJson() {
-      const blob = new Blob([JSON.stringify(this.tableList, '', '  ')], { type: 'text/plain' });
-      const link = document.createElement('a');
-      link.href = window.URL.createObjectURL(blob);
-      link.download = 'list.json';
-      link.click();
+      FileUtils.CreateJson('list.json', this.tableList);
     },
   },
 };
