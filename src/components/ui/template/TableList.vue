@@ -56,7 +56,7 @@ export default {
   methods: {
     clickNewTable(index) {
       this.isShowModal = true;
-      if (index) {
+      if (!isNaN(index)) {
         const form = Object.assign({}, this.tableList[index]);
         this.editForm = form;
         this.editIndex = index;
